@@ -7,7 +7,8 @@ const Header = () => (
     </h1>
 
     <h2 className="text-xl font-medium text-center my-2">
-      It all started when I got frustrated getting a list of timezones.{' '}
+      It all started when I got frustrated getting a list of all the possible
+      timezone offsets.
     </h2>
   </header>
 );

@@ -1,6 +1,7 @@
 [
   {
     "value": "timezoneOffsets",
-    "label": "TimeZone GMT Offsets"
+    "label": "TimeZone GMT Offsets",
+    "source": "https://en.wikipedia.org/wiki/List_of_UTC_time_offsets"
   }
 ]

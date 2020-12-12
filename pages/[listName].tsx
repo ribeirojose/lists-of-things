@@ -35,8 +35,11 @@ const ListPage = ({ list, listData }: ListPageProps) => {
       </Head>
 
       <MainLayout {...{ list, listData }}>
-        <div onClick={copyToClipboard} className="font-light">
+        <span onClick={copyToClipboard} className="font-light">
           {listData.join(', ')}
+        </span>
+        <div className="mt-2 text-sm text-blue-600 font-light">
+          <a href={list.source}>Source: {list.source}</a>
         </div>
       </MainLayout>
     </div>
