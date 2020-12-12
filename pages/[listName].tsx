@@ -56,7 +56,7 @@ export async function getStaticProps({
 }): Promise<GetStaticPropsResult<StaticProps>> {
   const list = listsIndex.find((element) => element.value == params.listName);
   const { default: listData } = await import(
-    `../data/lists/${list.value}.json`
+    `../lib/data/lists/${list.value}.json`
   );
   return {
     props: { list, listData },
