@@ -1,17 +1,17 @@
-import { MainLayout } from "@components";
-import Head from "next/head";
+import React from 'react';
 
-const Index = () => {
-  return (
-    <div>
-      <Head>
-        <title>Lists of things</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import { MainLayout } from '@components';
+import Head from 'next/head';
 
-      <MainLayout />
-    </div>
-  );
-};
+const Index = () => (
+  <div>
+    <Head>
+      <title>Lists of things</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+
+    <MainLayout />
+  </div>
+);
 
 export default Index;

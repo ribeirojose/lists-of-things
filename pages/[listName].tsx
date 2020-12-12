@@ -1,17 +1,29 @@
-import { MainLayout } from "@components";
-import Head from "next/head";
+import React from 'react';
 
-import { listsIndex } from "lib";
-import { GetStaticPropsResult, GetStaticPathsResult } from "next";
-import { ListData, List } from "lib/types";
+import { MainLayout } from '@components';
+import Head from 'next/head';
+import { useToasts } from 'react-toast-notifications';
 
-const ListPage = ({ list, listData }) => {
-  const copyToClipboard = (event) => {
-    const el = document.createElement("textarea");
-    el.value = event.target.innerText;
+import { listsIndex } from 'lib';
+import { GetStaticPropsResult, GetStaticPathsResult } from 'next';
+import { ListData, List } from 'lib/types';
+
+interface ListPageProps {
+  list: List;
+  listData: ListData;
+}
+
+const ListPage = ({ list, listData }: ListPageProps) => {
+  const { addToast } = useToasts();
+
+  const copyToClipboard = () => {
+    addToast(<>JSON list copied to clipboard.</>);
+
+    const el = document.createElement('textarea');
+    el.value = JSON.stringify(listData);
     document.body.appendChild(el);
     el.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     document.body.removeChild(el);
   };
 
@@ -24,12 +36,12 @@ const ListPage = ({ list, listData }) => {
 
       <MainLayout {...{ list, listData }}>
         <div onClick={copyToClipboard} className="font-light">
-          {listData.join(", ")}
+          {listData.join(', ')}
         </div>
       </MainLayout>
     </div>
   ) : (
-    ""
+    ''
   );
 };
 

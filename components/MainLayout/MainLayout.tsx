@@ -1,11 +1,11 @@
-import React from "react";
-import Select from "react-select";
-import { useRouter } from "next/router";
+import React from 'react';
+import Select from 'react-select';
+import { useRouter } from 'next/router';
 
-import Footer from "@components/Footer";
-import Header from "@components/Header";
-import { listsIndex } from "lib";
-import { List, ListData } from "lib/types";
+import Footer from '@components/Footer';
+import Header from '@components/Header';
+import { listsIndex } from 'lib';
+import { List, ListData } from 'lib/types';
 
 interface MainLayoutProps {
   list?: List;
@@ -17,7 +17,7 @@ const MainLayout = ({ list, children }: MainLayoutProps) => {
   const router = useRouter();
 
   const handleChange = (option) => {
-    router.push("/[listName]", `/${option.value}`);
+    router.push('/[listName]', `/${option.value}`);
   };
 
   return (
@@ -31,7 +31,7 @@ const MainLayout = ({ list, children }: MainLayoutProps) => {
               value={list}
               options={listsIndex}
               onChange={handleChange}
-              placeholder={"Find the thing you want a list for"}
+              placeholder="Find the thing you want a list for"
             />
             <span className="font-bold">Click list to copy to clipboard.</span>
           </div>

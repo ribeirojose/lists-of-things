@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Header = () => (
   <header>
@@ -7,7 +7,7 @@ const Header = () => (
     </h1>
 
     <h2 className="text-xl font-medium text-center my-2">
-      It all started when I got frustrated getting a list of timezones.{" "}
+      It all started when I got frustrated getting a list of timezones.{' '}
     </h2>
   </header>
 );
